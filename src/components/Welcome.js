@@ -8,7 +8,7 @@ const Welcome = () => {
 
   const refreshToken = async () => {
     const res = await axios
-      .get("https://auth-backendd.onrender.com/api/refresh", {
+      .get("https://new-auth-backend.onrender.com/api/refresh", {
         withCredentials: true,
       })
       .catch((err) => console.log(err));
