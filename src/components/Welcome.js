@@ -21,7 +21,7 @@ const Welcome = () => {
 
   const sednRequest = async () => {
 
-    const res = await axios.get("https://auth-backendd.onrender.com/api/user",{
+    const res = await axios.get("https://new-auth-backend.onrender.com/api/user",{
       withCredentials: true,
     }) .catch((err) => console.log(err));
     const data = await res.data;

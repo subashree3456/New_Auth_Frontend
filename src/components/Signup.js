@@ -20,7 +20,7 @@ const Signup = () => {
 
       const sendRequest = async () => {
         const res = await axios
-          .post("https://auth-backendd.onrender.com/api/signup", {
+          .post("https://new-auth-backend.onrender.com/api/signup", {
             name: inputs.name,
             email: inputs.email,
             password: inputs.password,
