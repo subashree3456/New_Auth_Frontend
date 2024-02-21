@@ -26,7 +26,7 @@ const Signup = () => {
             password: inputs.password,
           })
           .catch((err) => console.log(err));
-        const data = await res.data;
+        const data = res.data;
         return data;
       };
 
