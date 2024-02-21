@@ -24,7 +24,7 @@ const Welcome = () => {
     const res = await axios.get("https://new-auth-backend.onrender.com/api/user",{
       withCredentials: true,
     }) .catch((err) => console.log(err));
-    const data = await res.data;
+    const data = res.data;
     return data;
   }
    
