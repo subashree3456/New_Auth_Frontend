@@ -26,7 +26,9 @@ const Login = () => {
       })
       .catch((err) => console.log(err));
     const data =  res.data;
-    return data;
+    const token  = data.token;
+    localStorage.setItem("token" , token)
+    //return data;
   };
   const handleSubmit = (e) => {
     e.preventDefault();

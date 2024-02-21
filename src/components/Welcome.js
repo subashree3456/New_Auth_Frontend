@@ -21,7 +21,11 @@ const Welcome = () => {
 
   const sednRequest = async () => {
 
-    const res = await axios.get("https://new-auth-backend.onrender.com/api/user",{
+    const token =  localStorage.getItem("token")
+
+    const res = await axios.get("https://new-auth-backend.onrender.com/api/user", {
+      headers: {Authorization:`Bearer ${token}`} ,
+
       withCredentials: true,
     }) .catch((err) => console.log(err));
     const data = res.data;
@@ -34,10 +38,10 @@ const Welcome = () => {
       firstRender = false;
       sednRequest().then((data) => setUser(data.user));
     }
-    let interval = setInterval(() => {
-      refreshToken().then((data) => setUser(data.user));
-    }, 1000 * 29);
-    return () => clearInterval(interval);
+    // let interval = setInterval(() => {
+    //   refreshToken().then((data) => setUser(data.user));
+    // }, 1000 * 29);
+    // return () => clearInterval(interval);
 
   },[]);   
   return <div>
